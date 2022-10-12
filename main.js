@@ -5,6 +5,7 @@ let turn = 0
 
 const dealerScore = document.getElementById("dealerNum")
 const playerScore = document.getElementById("playerNum")
+const turnInd = document.getElementById("turnId")
 
 function cardGen() {
     return Math.floor((Math.random() * 12) + 1)
@@ -19,13 +20,16 @@ function turnIncrement() {
 }
 
 function play() {
+
     const dealerTurn = cardGen()
     dealerScore.innerText = dealerNum + dealerTurn
 
     const playerTurn = cardGen()
     playerScore.innerText = playerNum + playerTurn
 
+
     turnIncrement()
+    turnInd.innerHTML = "Turn: " + turn
     console.log(turn)
 }
 
